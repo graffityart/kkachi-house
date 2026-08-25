@@ -9,6 +9,12 @@ export const metadata: Metadata = {
   title: "까치 하우스 | 철거·원상복구 무료 현장 방문 견적",
   description: "상가·사무실·주택 철거, 부분 철거, 원상복구까지. 까치 하우스 무료 현장 방문 견적을 신청하세요.",
   alternates: { canonical: "/" },
+  icons: {
+    icon: [
+      { url: "/images/uploads/portfolio/favicon.ico", type: "image/x-icon" }
+    ],
+    shortcut: "/images/uploads/portfolio/favicon.ico"
+  },
   openGraph: {
     title: "까치 하우스 | 철거·원상복구",
     description: "철거부터 원상복구까지 현장을 확인하고 필요한 공정만 안내합니다.",
