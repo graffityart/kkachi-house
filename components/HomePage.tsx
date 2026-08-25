@@ -16,6 +16,13 @@ const heroStats = [
   { icon: "♙", no: "04", label: "자격증 인력 대거", value: "폐업 컨설턴트 20명 상주" }
 ];
 
+const whyCards = [
+  { no: "01", title: "합리적인 철거 인건비", text: "현장 조건과 철거 범위를 먼저 확인해 불필요한 공정을 줄이고, 필요한 인력과 장비만 배치해 견적 부담을 낮춥니다." },
+  { no: "02", title: "직영 폐기물 처리장", text: "철거 과정에서 발생하는 폐기물 처리 비용을 줄일 수 있도록 직영 처리장 운영 체계를 바탕으로 효율적으로 안내합니다." },
+  { no: "03", title: "투명한 견적 · 안심 상담", text: "현장 확인 후 공정별 범위를 명확하게 안내하고, 계약 전 견적 내용을 확인할 수 있도록 상담 과정을 투명하게 진행합니다." },
+  { no: "04", title: "정부 지원금 원스톱 안내", text: "소상공인 희망리턴패키지 등 폐업지원 제도를 확인해 신청 가능 여부와 준비 절차를 함께 안내해드립니다." }
+];
+
 export default function HomePage() {
   const [sending, setSending] = useState(false);
   const [modal, setModal] = useState<"success" | "error" | null>(null);
@@ -50,16 +57,31 @@ export default function HomePage() {
           <div className="hero-support-badge hero-animate delay-1">희망리턴패키지 등 정부 폐업지원금 최대 600만 원 신청 연계</div>
           <p className="hero-kicker hero-kicker-strip hero-animate delay-2">부산·경남 지역 전문 철거는 까치 하우스가 답입니다</p>
           <h1 className="hero-animate delay-3">안전하고 깔끔한 철거,<br/><span>까치 하우스</span>가 책임집니다.</h1>
-          <div className="hero-price-banner hero-animate delay-4">
-            <strong>철거부터 원상복구까지</strong>
-            <b>타업체 대비 평균 25% 저렴하게!</b>
-          </div>
+          <div className="hero-price-banner hero-animate delay-4"><strong>철거부터 원상복구까지</strong><b>타업체 대비 평균 25% 저렴하게!</b></div>
           <p className="hero-copy hero-animate delay-5">상가·사무실·주택 철거부터 원상복구까지.<br/>현장을 직접 확인하고 필요한 공정만 정확하게 안내합니다.</p>
           <a href="#estimate" className="primary-button hero-cta hero-animate delay-5">무료 현장 방문 견적 신청 <span>→</span></a>
         </div>
         <div className="hero-stats-wrap container hero-animate delay-5"><div className="hero-stats-card">{heroStats.map((item)=><div className="hero-stat" key={item.no}><div className="hero-stat-icon">{item.icon}</div><div className="hero-stat-no">{item.no}</div><div className="hero-stat-label">{item.label}</div><div className="hero-stat-value">{item.value}</div><span className="hero-stat-line"/></div>)}</div></div>
       </section>
-      <section className="section hero-after" id="services"><div className="container"><div className="section-heading"><p className="eyebrow dark">SERVICE</p><h2>필요한 철거 범위부터 확인하세요.</h2><p>전체 철거가 아니어도 괜찮습니다. 현장 상황과 목적에 맞춰 상담합니다.</p></div><div className="service-grid">{services.map(([title,description],i)=><article className="service-card" key={title}><div className="image-placeholder">SERVICE IMAGE {i+1}</div><div className="card-body"><h3>{title}</h3><p>{description}</p></div></article>)}</div></div></section>
+
+      <section className="why-section" id="why-kkachi">
+        <div className="container">
+          <div className="why-heading">
+            <p className="why-kicker">WHY KKACHI HOUSE</p>
+            <h2>왜 철거는 <span>‘까치 하우스’</span>여야 할까요?</h2>
+            <p>복잡한 철거 견적과 폐기물 처리, 지원금 안내까지 한 번에 이해하기 쉽게 정리해드립니다.</p>
+          </div>
+          <div className="why-grid">
+            {whyCards.map((card)=><article className="why-card" key={card.no}>
+              <div className="why-no">{card.no}</div>
+              <h3>{card.title}</h3>
+              <p>{card.text}</p>
+            </article>)}
+          </div>
+        </div>
+      </section>
+
+      <section className="section" id="services"><div className="container"><div className="section-heading"><p className="eyebrow dark">SERVICE</p><h2>필요한 철거 범위부터 확인하세요.</h2><p>전체 철거가 아니어도 괜찮습니다. 현장 상황과 목적에 맞춰 상담합니다.</p></div><div className="service-grid">{services.map(([title,description],i)=><article className="service-card" key={title}><div className="image-placeholder">SERVICE IMAGE {i+1}</div><div className="card-body"><h3>{title}</h3><p>{description}</p></div></article>)}</div></div></section>
       <section className="process-section"><div className="container"><div className="section-heading light"><p className="eyebrow">PROCESS</p><h2>견적 신청부터 현장 상담까지</h2><p>불필요하게 복잡한 절차 없이 필요한 내용을 빠르게 확인합니다.</p></div><div className="process-grid"><div><b>01</b><h3>온라인 접수</h3><p>현장 주소와 면적, 요청사항을 남겨주세요.</p></div><div><b>02</b><h3>내용 확인</h3><p>접수 내용을 확인하고 상담을 진행합니다.</p></div><div><b>03</b><h3>현장 방문</h3><p>철거 범위와 현장 조건을 직접 확인합니다.</p></div><div><b>04</b><h3>견적 안내</h3><p>확인된 공정을 기준으로 견적을 안내합니다.</p></div></div></div></section>
       <section className="section" id="portfolio"><div className="container"><div className="section-heading"><p className="eyebrow dark">PORTFOLIO</p><h2>까치 하우스 시공 사례</h2><p>실제 시공 사진이 준비되면 이미지 URL만 교체하면 됩니다.</p></div><div className="portfolio-grid">{[1,2,3].map(i=><article className="portfolio-card" key={i}><div className="image-placeholder">PORTFOLIO IMAGE {i}</div><div><h3>철거 시공 사례 {i}</h3><p>실제 현장 사진과 설명을 넣어주세요.</p></div></article>)}</div></div></section>
       <section className="estimate-section" id="estimate"><div className="container estimate-layout"><div className="estimate-copy"><p className="eyebrow">FREE ESTIMATE</p><h2>무료 현장 방문<br/>견적을 신청하세요.</h2><p>현장 정보를 자세히 남겨주시면 상담과 방문 일정 조율에 도움이 됩니다.</p><ul><li>상가·사무실·주택 철거</li><li>임대차 종료 원상복구</li><li>바닥·천장·벽체 등 부분 철거</li></ul></div><form className="estimate-form" onSubmit={submitEstimate}><label>성함 / 업체명 <em>*</em><input name="name" required maxLength={60} placeholder="예: 홍길동 / 까치상사"/></label><div className="form-row"><label>연락처 <em>*</em><input name="phone" inputMode="tel" required placeholder="010-1234-5678"/></label><label>예상 시공 면적(평) <em>*</em><input name="area" inputMode="decimal" required placeholder="예: 25"/></label></div><label>시공 주소 <em>*</em><input name="address" required maxLength={180} placeholder="상세 주소까지 입력해 주세요."/></label><label>철거 종류<select name="workType" defaultValue=""><option value="">선택해 주세요.</option><option>상가 철거 / 원상복구</option><option>사무실 철거 / 원상복구</option><option>주택 내부 철거</option><option>부분 철거</option><option>기타</option></select></label><label>문의 및 요청사항 <em>*</em><textarea name="request" required maxLength={650} rows={6} placeholder="철거 범위, 현재 상태, 희망 일정 등을 자유롭게 적어주세요."/></label><label className="privacy-check"><input type="checkbox" name="privacy" required/><span>개인정보 수집 및 이용에 동의합니다. <a href="/privacy" target="_blank">[내용보기]</a></span></label><input className="hp-field" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true"/><button className="submit-button" type="submit" disabled={sending}>{sending?"접수 중...":"무료 현장 방문 견적 신청"}</button></form></div></section>
