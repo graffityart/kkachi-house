@@ -47,10 +47,15 @@ export default function HomePage() {
         <div className="hero-image" aria-hidden="true"><img src="/images/uploads/hero.webp" alt="" /></div>
         <div className="hero-glow hero-glow-one"/><div className="hero-glow hero-glow-two"/>
         <div className="container hero-content hero-content-premium">
-          <p className="hero-kicker hero-animate delay-1">부산·경남 지역 전문 철거는 까치 하우스가 답입니다</p>
-          <h1 className="hero-animate delay-2">안전하고 깔끔한 철거,<br/><span>까치 하우스</span>가 책임집니다.</h1>
-          <p className="hero-copy hero-animate delay-3">상가·사무실·주택 철거부터 원상복구까지.<br/>현장을 직접 확인하고 필요한 공정만 정확하게 안내합니다.</p>
-          <a href="#estimate" className="primary-button hero-cta hero-animate delay-4">무료 현장 방문 견적 신청 <span>→</span></a>
+          <div className="hero-support-badge hero-animate delay-1">희망리턴패키지 등 정부 폐업지원금 최대 600만 원 신청 연계</div>
+          <p className="hero-kicker hero-kicker-strip hero-animate delay-2">부산·경남 지역 전문 철거는 까치 하우스가 답입니다</p>
+          <h1 className="hero-animate delay-3">안전하고 깔끔한 철거,<br/><span>까치 하우스</span>가 책임집니다.</h1>
+          <div className="hero-price-banner hero-animate delay-4">
+            <strong>철거부터 원상복구까지</strong>
+            <b>타업체 대비 평균 25% 저렴하게!</b>
+          </div>
+          <p className="hero-copy hero-animate delay-5">상가·사무실·주택 철거부터 원상복구까지.<br/>현장을 직접 확인하고 필요한 공정만 정확하게 안내합니다.</p>
+          <a href="#estimate" className="primary-button hero-cta hero-animate delay-5">무료 현장 방문 견적 신청 <span>→</span></a>
         </div>
         <div className="hero-stats-wrap container hero-animate delay-5"><div className="hero-stats-card">{heroStats.map((item)=><div className="hero-stat" key={item.no}><div className="hero-stat-icon">{item.icon}</div><div className="hero-stat-no">{item.no}</div><div className="hero-stat-label">{item.label}</div><div className="hero-stat-value">{item.value}</div><span className="hero-stat-line"/></div>)}</div></div>
       </section>
