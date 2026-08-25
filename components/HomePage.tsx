@@ -97,7 +97,37 @@ export default function HomePage() {
       <section className="process-section"><div className="container"><div className="section-heading light"><p className="eyebrow">PROCESS</p><h2>견적 신청부터 현장 상담까지</h2><p>불필요하게 복잡한 절차 없이 필요한 내용을 빠르게 확인합니다.</p></div><div className="process-grid"><div><b>01</b><h3>온라인 접수</h3><p>현장 주소와 면적, 요청사항을 남겨주세요.</p></div><div><b>02</b><h3>내용 확인</h3><p>접수 내용을 확인하고 상담을 진행합니다.</p></div><div><b>03</b><h3>현장 방문</h3><p>철거 범위와 현장 조건을 직접 확인합니다.</p></div><div><b>04</b><h3>견적 안내</h3><p>확인된 공정을 기준으로 견적을 안내합니다.</p></div></div></div></section>
       <section className="estimate-section" id="estimate"><div className="container estimate-layout"><div className="estimate-copy"><p className="eyebrow">FREE ESTIMATE</p><h2>무료 현장 방문<br/>견적을 신청하세요.</h2><p>현장 정보를 자세히 남겨주시면 상담과 방문 일정 조율에 도움이 됩니다.</p><ul><li>상가·사무실·주택 철거</li><li>임대차 종료 원상복구</li><li>바닥·천장·벽체 등 부분 철거</li></ul></div><form className="estimate-form" onSubmit={submitEstimate}><label>성함 / 업체명 <em>*</em><input name="name" required maxLength={60} placeholder="예: 홍길동 / 까치상사"/></label><div className="form-row"><label>연락처 <em>*</em><input name="phone" inputMode="tel" required placeholder="010-1234-5678"/></label><label>예상 시공 면적(평) <em>*</em><input name="area" inputMode="decimal" required placeholder="예: 25"/></label></div><label>시공 주소 <em>*</em><input name="address" required maxLength={180} placeholder="상세 주소까지 입력해 주세요."/></label><label>철거 종류<select name="workType" defaultValue=""><option value="">선택해 주세요.</option><option>상가 철거 / 원상복구</option><option>사무실 철거 / 원상복구</option><option>주택 내부 철거</option><option>부분 철거</option><option>기타</option></select></label><label>문의 및 요청사항 <em>*</em><textarea name="request" required maxLength={650} rows={6} placeholder="철거 범위, 현재 상태, 희망 일정 등을 자유롭게 적어주세요."/></label><label className="privacy-check"><input type="checkbox" name="privacy" required/><span>개인정보 수집 및 이용에 동의합니다. <a href="/privacy" target="_blank">[내용보기]</a></span></label><input className="hp-field" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true"/><button className="submit-button" type="submit" disabled={sending}>{sending?"접수 중...":"무료 현장 방문 견적 신청"}</button></form></div></section>
     </main>
-    <footer><div className="container footer-grid"><div className="footer-logo-block"><img src="/images/uploads/logo.png" alt="까치 하우스" className="footer-logo"/><p>철거 · 원상복구 · 부분 철거</p></div><div className="business-info"><p><b>대표</b> 오지훈</p><p><b>사업자등록번호</b> 458-21-02084</p><p><b>업태</b> 서비스 <span className="divider">|</span> <b>종목</b> 집수리</p><p><b>사업장</b> 부산광역시 사하구 까치고개로 47 (괴정동)</p><a href="/privacy">개인정보처리방침</a></div></div><div className="container copyright">Copyright © 2026 까치 하우스. All Rights Reserved.</div></footer>
+
+    <footer className="site-footer-pro">
+      <div className="container footer-top-pro">
+        <div className="footer-brand-pro">
+          <img src="/images/uploads/logo.png" alt="까치 하우스" className="footer-logo-pro"/>
+          <p>부산·경남 철거 · 원상복구 · 폐기물 처리 전문</p>
+          <div className="footer-tags"><span>무료 현장 견적</span><span>원상복구</span><span>폐기물 처리</span></div>
+        </div>
+        <div className="footer-links-pro">
+          <h3>바로가기</h3>
+          <a href="#services">사업안내</a><a href="#portfolio">철거사례</a><a href="#estimate">견적안내</a><a href="/privacy">개인정보처리방침</a>
+        </div>
+        <div className="footer-contact-pro">
+          <span className="footer-contact-label">온라인 문의 접수 중</span>
+          <strong>무료 현장 방문 견적</strong>
+          <p>평일·주말 관계없이 접수 가능합니다.<br/>접수 내용을 확인한 뒤 빠르게 연락드립니다.</p>
+          <a href="#estimate">견적 신청하기 <b>→</b></a>
+        </div>
+      </div>
+      <div className="container footer-divider-pro"/>
+      <div className="container footer-bottom-pro">
+        <div className="footer-business-pro">
+          <p><b>상호</b> 까치 하우스 <span>|</span> <b>대표</b> 오지훈</p>
+          <p><b>사업자등록번호</b> 458-21-02084 <span>|</span> <b>업태</b> 서비스 <span>|</span> <b>종목</b> 집수리</p>
+          <p><b>사업장</b> 부산광역시 사하구 까치고개로 47 (괴정동)</p>
+        </div>
+        <div className="footer-note-pro">※ 현장 조건, 철거 범위 및 폐기물 발생량에 따라 실제 견적은 달라질 수 있습니다.</div>
+      </div>
+      <div className="container footer-copy-pro">Copyright © 2026 까치 하우스. All Rights Reserved.</div>
+    </footer>
+
     <a className="mobile-fixed-cta" href="#estimate">무료 견적 신청</a>
     {modal&&<div className="modal-backdrop" role="dialog" aria-modal="true" onClick={()=>setModal(null)}><div className="modal-box" onClick={e=>e.stopPropagation()}>{modal==="success"?<><div className="modal-icon">✓</div><h2>접수가 정상적으로 완료되었습니다.</h2><p>빠른 연락드리겠습니다.<br/>감사합니다.</p></>:<><div className="modal-icon error">!</div><h2>접수를 완료하지 못했습니다.</h2><p>{errorMessage}</p></>}<button onClick={()=>setModal(null)}>확인</button></div></div>}
   </>;
