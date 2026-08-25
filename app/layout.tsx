@@ -3,6 +3,7 @@ import "./globals.css";
 import "./why.css";
 import "./portfolio.css";
 import "./footer.css";
+import "./privacy.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://maxpool.olbarun.kr"),
