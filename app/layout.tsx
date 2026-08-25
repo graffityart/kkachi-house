@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import "./why.css";
 import "./portfolio.css";
+import "./footer.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://maxpool.olbarun.kr"),
