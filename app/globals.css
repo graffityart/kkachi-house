@@ -37,3 +37,11 @@
   .modal-backdrop{padding:16px;padding-bottom:calc(110px + env(safe-area-inset-bottom,0px))}
 }
 @media(prefers-reduced-motion:reduce){.contact-action{transition:none}}
+
+/* Evening callback message */
+.evening-notice{width:100%;margin:15px auto 0;padding:17px 22px;display:flex;align-items:center;justify-content:center;gap:23px;border:1px solid rgba(133,176,255,.75);border-radius:17px;background:linear-gradient(120deg,rgba(7,14,26,.92),rgba(24,34,50,.91));box-shadow:0 10px 30px rgba(0,0,0,.28);color:#fff}
+.evening-notice-icon{flex:none;font-size:44px;color:#d6e3ff;line-height:1}
+.evening-notice p{margin:0;font-size:clamp(15px,1.7vw,21px);line-height:1.5;font-weight:800;letter-spacing:-.03em;text-align:center}
+.evening-notice strong{color:#ffce28;font-weight:950}
+.evening-notice-chat{flex:none;font-size:24px;letter-spacing:-9px;color:#ffdc00;padding-right:9px}
+@media(max-width:600px){.evening-notice{margin-top:12px;padding:13px 10px;gap:9px;border-radius:12px}.evening-notice-icon{font-size:29px}.evening-notice p{font-size:clamp(12px,3.5vw,15px);line-height:1.5}.evening-notice-chat{font-size:15px;letter-spacing:-6px;padding-right:6px}.evening-notice-desktop{display:none}}
